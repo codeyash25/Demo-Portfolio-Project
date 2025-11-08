@@ -1,0 +1,250 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #222222;
+  --card-bg: #f8f8f8;
+  --link-color: #0066cc;
+  --border-color: #d4d4d4;
+  --muted-text: #555555;
+}
+
+body.dark-mode {
+  --bg-color: #0f0f0f;
+  --text-color: #f1f1f1;
+  --card-bg: #1a1a1a;
+  --link-color: #61dafb;
+  --border-color: #333333;
+  --muted-text: #aaaaaa;
+}
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 40px 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.hello {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  margin-bottom: 2rem;
+  height: 3rem;
+  max-width: 100%;
+}
+
+.header-content {
+  height: 80%;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 1rem;
+  border: 0.1rem solid var(--border-color);
+}
+
+.lr-border {
+  height: 1rem;
+  border-left: 0.2rem solid var(--border-color);
+  padding-left: 1rem;
+  border-right: 0.2rem solid var(--border-color);
+  padding-right: 1rem;
+}
+
+#toggleMode {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  cursor: pointer;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+#toggleMode:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+
+.intro {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 900px;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
+.intro img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+main {
+  max-width: 900px;
+  margin: auto;
+}
+
+h3 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  border-bottom: 1px solid var(--text-color);
+  padding-bottom: 6px;
+  margin: 2rem 0 1rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  padding: 1rem 1.2rem;
+}
+
+.work-title {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+.current {
+  padding-top: 0.5rem;
+}
+
+.work-location {
+  padding-top: 0.3rem;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toggle-roles {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-top: 0.8rem;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.toggle-roles span {
+  background-color: var(--card-bg);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.arrow.open {
+  transform: rotate(180deg);
+}
+.previous-roles {
+  display: none;
+  margin-top: 1rem;
+}
+
+.previous-roles.active {
+  display: block;
+}
+
+.role-item {
+  box-sizing: border-box;
+  height: 3.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.9rem;
+}
+
+.role-date {
+  opacity: 0.8;
+  font-size: 0.8rem;
+  color: var(--muted-text);
+  text-align: center;
+  margin-bottom: 0.6rem;
+  margin-top: 0.6rem;
+}
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: start;
+  margin-top: 1rem;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: end;
+  gap: 0.5rem;
+}
+
+.last-section {
+  height: 10rem;
+  line-height: 2rem;
+  padding: 1rem;
+  border: 0.1rem solid var(--border-color);
+  border-radius: 1rem;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+@media (max-width: 599px) {
+  .intro {
+    flex-direction: column;
+    text-align: center;
+  }
+  header {
+    flex-direction: row;
+    gap: 0.8rem;
+  }
+
+  .header-content {
+    width: 70%;
+  }
+}
